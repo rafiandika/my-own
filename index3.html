@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love U</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      background: #fbcfe8; /* pink pastel */
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    h1 {
+      font-size: 60px;
+      color: #ec4899;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: scale(0.5) rotate(-20deg);
+      animation: popIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes popIn {
+      to {
+        opacity: 1;
+        transform: scale(1.2) rotate(0deg);
+      }
+    }
+
+    /* Bunga */
+    .flower {
+      position: relative;
+      width: 100px;
+      height: 150px;
+      margin-top: 40px;
+      transform: scale(0);
+      animation: grow 2s ease-out forwards;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes grow {
+      to { transform: scale(1); }
+    }
+
+    .stem {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 120px;
+      background: #16a34a;
+      border-radius: 5px;
+    }
+
+    .petal {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: #ec4899;
+      border-radius: 50%;
+    }
+
+    .petal1 { top: -20px; left: 20px; background: #f472b6; }
+    .petal2 { top: 0; left: -20px; background: #fb7185; }
+    .petal3 { top: 0; left: 60px; background: #f9a8d4; }
+    .petal4 { top: 40px; left: 20px; background: #f472b6; }
+
+    .center {
+      position: absolute;
+      top: 20px;
+      left: 35px;
+      width: 40px;
+      height: 40px;
+      background: #facc15;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 I Looppp U 💖</h1>
+
+  <div class="flower">
+    <div class="stem"></div>
+    <div class="petal petal1"></div>
+    <div class="petal petal2"></div>
+    <div class="petal petal3"></div>
+    <div class="petal petal4"></div>
+    <div class="center"></div>
+  </div>
+</body>
+</html>

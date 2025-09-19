@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haloo Cantikk</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    /* Foto di atas */
+    .floating-img {
+      position: absolute;
+      top: 30px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      animation: moveLeftRight 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveLeftRight {
+      0% { left: 20px; }
+      100% { left: calc(100% - 100px); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      animation: floatText 2s ease-out forwards;
+      opacity: 0;
+      margin-bottom: 40px;
+      margin-top: 100px; /* kasih jarak biar ga ketiban sama foto */
+    }
+
+    @keyframes floatText {
+      0% {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 20px;
+      animation: floatHeart 5s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .next-btn {
+      background: #ff7eb9;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .next-btn:hover {
+      background: #ff4d6d;
+      transform: scale(1.1);
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .next-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+      .floating-img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .next-btn {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Foto kecil di atas -->
+  <img src="bungaaaa-removebg-preview.png``" alt="Foto Cantik" class="floating-img">
+
+  <h1>halooowwwwww cantikkkkkkkk ❤️</h1>
+
+  <!-- Tombol ke halaman berikutnya -->
+  <button class="next-btn" onclick="goNext()">👉 Lanjut Cantikku 💕</button>
+
+  <script>
+    // buat love banyak
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      document.body.appendChild(heart);
+
+      // random posisi
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 25 + 15 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+
+      // hapus love setelah selesai
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+
+    // fungsi ke halaman berikut
+    function goNext() {
+      window.location.href = "index2.html"; // ganti ke file page berikutnya
+    }
+  </script>
+</body>
+</html>

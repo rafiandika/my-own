@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pilih Balon Cantikku</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+      background: linear-gradient(to top, #ffdde1, #ee9ca7);
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  animation: slideLoop 6s linear infinite;
+}
+
+/* Animasi bolak-balik */
+@keyframes slideLoop {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0); /* berhenti di tengah */
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 120px;
+      width: 100%;
+    }
+
+    .balloon {
+      width: 80px;
+      height: 100px;
+      background: #ff7eb9;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      position: relative;
+      cursor: pointer;
+      animation: float 6s ease-in-out infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8rem;
+      color: white;
+      font-weight: bold;
+      box-shadow: inset -4px -6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .balloon:active {
+      transform: scale(0.9);
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 40px;
+      background: #666;
+      transform: translateX(-50%);
+    }
+
+    .balloon.right {
+      background: #ff4d6d;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Responsive khusus layar kecil (contoh iPhone XS) */
+    @media (max-width: 400px) {
+      .container {
+        gap: 40px;
+        margin-bottom: 90px;
+      }
+      .balloon {
+        width: 65px;
+        height: 85px;
+        font-size: 1.4rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="balloon left" onclick="goNext()">🎈</div>
+    <div class="balloon right" onclick="wrongPick()">🎈</div>
+  </div>
+  <h2>Pilih salah satuuuu 💕</h2>
+
+  <script>
+    function wrongPick() {
+      alert("Salahhh klikkk 😜 coba yang satunyaa");
+    }
+
+    function goNext() {
+      window.location.href = "index3.html"; // halaman berikutnya
+    }
+  </script>
+</body>
+</html>
